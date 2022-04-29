@@ -1,17 +1,13 @@
+//Como se realiza actualmente con REACT 18
+
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot }from 'react-dom/client'; //ahora se importa createRoot de react-dom/client para renderisarlo en el html
+import GifExpertApp from './GifExpertApp';
+import './index.css'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const divRoot = document.querySelector('#root');
+const root = createRoot(divRoot);// se crea una const root para renderizar
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(<GifExpertApp />);//ya no se necesita mandar el divroot como antes y se llama al root
+
+
